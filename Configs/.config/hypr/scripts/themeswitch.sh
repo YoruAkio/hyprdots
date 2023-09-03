@@ -85,6 +85,17 @@ fi
 # vs code
 sed -i "/workbench.colorTheme/c\    \"workbench.colorTheme\": \"${ThemeSet}\"," $ConfDir/Code/User/settings.json
 
+# neofetch
+# if ThemeSet = Rose-Pine then ln -sfvr $ConfDir/neofetch/Chara/Hitori $ConfDir/neofetch/Chara/Images
+# if ThemeSet = Tokyo-Night then ln -sfvr $ConfDir/neofetch/Chara/Ryou $ConfDir/neofetch/Chara/Images
+
+if [ $ThemeSet = "Rose-Pine" ] ; then
+    rm $ConfDir/neofetch/Chara/Images
+    ln -fs $ConfDir/neofetch/Chara/Hitori $ConfDir/neofetch/Chara/Images
+elif [ $ThemeSet = "Tokyo-Night" ] ; then
+    rm $ConfDir/neofetch/Chara/Images
+    ln -fs $ConfDir/neofetch/Chara/Ryou $ConfDir/neofetch/Chara/Images
+fi
 
 # kitty
 ln -fs $ConfDir/kitty/themes/${ThemeSet}.conf $ConfDir/kitty/themes/theme.conf

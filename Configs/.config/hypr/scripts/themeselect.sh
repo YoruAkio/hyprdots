@@ -21,7 +21,7 @@ if [ -z "$1" ] ; then
         thm=`echo $line | cut -d '|' -f 2`
         wal=`echo $line | cut -d '|' -f 3`
         echo -en "$thm\x00icon\x1f$ThumbDir/${thm}.png\n"
-    done | rofi -dmenu -theme-str "${r_override}" -config $RofiConf)
+    done | rofi -dmenu -theme-str "${r_override}")
 
     if [ ! -z $ThemeSel ] ; then
         ${BaseDir}/themeswitch.sh -s $ThemeSel
@@ -44,6 +44,5 @@ elif [ "$1" == "T" ] ; then
         #convert -size 1080x1080 xc:none -draw "roundrectangle 0,0,1080,1080,80,80" $ThumbDir/roundedmask.png
         #convert $ThumbDir/${thm}_tmp.png -matte $ThumbDir/roundedmask.png -compose DstIn -composite $ThumbDir/${thm}.png
     done
-
 fi
 

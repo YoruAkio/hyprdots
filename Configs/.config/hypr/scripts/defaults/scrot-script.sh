@@ -7,22 +7,22 @@ filename=Akio-Screenshots-$(date +%F_%T)
 imagepath=$DIRNAME/$filename.png
 
 function selection(){
-	scrot -z -f -q 100 -s "$imagepath" -e 'xclip -selection clipboard -t image/png -i $f' -e "wl-copy < $f"
+	scrot -z -f -q 100 -s "$imagepath" -e 'xclip -selection clipboard -t image/png -i $f'
     dunstify -a "Screenshots Utils" -i "$imagepath" "Screenshots taken, saved on Path ~/Picture/Screenshots" -r 2000
 }
 
 function full_screen(){
-	scrot -z -f -q 100 -s "$imagepath" -e 'xclip -selection clipboard -t image/png -i $f' -e "wl-copy < $f"
+	scrot -z -f -q 100 -s "$imagepath" -e 'xclip -selection clipboard -t image/png -i $f'
 	dunstify -a "Screenshots Utils" -i "$imagepath" "Screenshots taken, saved on Path ~/Picture/Screenshots" -r 2000
 }
 
 function delay(){
-	scrot -d 3 -z -f -q 100 -s "$imagepath" -e 'xclip -selection clipboard -t image/png -i $f' -e "wl-copy < $f"
+	scrot -d 3 -z -f -q 100 -s "$imagepath" -e 'xclip -selection clipboard -t image/png -i $f'
 	dunstify -a "Screenshots Utils" -i "$imagepath" "Screenshots taken, saved on Path ~/Picture/Screenshots" -r 2000
 }
 
 function window(){
-    scrot -u -z -f -q 100 -s "$imagepath" -e 'xclip -selection clipboard -t image/png -i $f' -e "wl-copy < $f"
+    scrot -u -z -f -q 100 -s "$imagepath" -e 'xclip -selection clipboard -t image/png -i $f'
     dunstify -a "Screenshots Utils" -i "$imagepath" "Screenshots taken, saved on Path ~/Picture/Screenshots" -r 2000
 }
 
